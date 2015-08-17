@@ -1,0 +1,60 @@
+<div id="top" style="padding-top: 50px">
+
+</div>
+<div>
+    <hr>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <p>
+        <h2>  Add the elegant appearance to your party by choosing eye blazing range of products in the collection..</h2>
+        </p>
+    </div>
+
+</div>
+<div class="container">
+
+    <div class="row" ng-controller="productController">
+        <div class="col-sm-12">
+            <div class="row" ng-repeat="product in products" ng-if="$index % 4 == 0">
+                <div  class="col-xs-3 thumbnail"  ng-hide="!products[$index].title">
+                    <img ng-src="{{products[$index].imgurl}}">
+                    <div class="caption" ng-show="products[$index].title">
+                        <h2>{{products[$index].title}}</h2>
+                        <p>{{products[$index].disc}}</p>
+                        <hr>
+                        <product-button-card add-to-cart-method="addToCartConfirm(products[$index].id)" ></product-button-card>
+                    </div>
+                </div>
+                <div  class="col-xs-3 thumbnail"  ng-hide="!products[$index+1].title">
+                    <img ng-src="{{products[$index+1].imgurl}}">
+                    <div class="caption" ng-show="products[$index+1].title">
+                        <h2>{{products[$index+1].title}}</h2>
+                        <p>{{products[$index+1].disc}}</p>
+                        <hr>
+                        <product-button-card add-to-cart-method="addToCartConfirm(products[$index+1].id)" ></product-button-card>
+                    </div>
+                </div>
+                <div  class="col-xs-3 thumbnail"  ng-hide="!products[$index+2].title">
+                    <img ng-src="{{products[$index+2].imgurl}}">
+                    <div class="caption" ng-show="products[$index+2].title">
+                        <h2>{{products[$index+2].title}}</h2>
+                        <p>{{products[$index+2].disc}}</p>
+                        <hr>
+                        <product-button-card add-to-cart-method="addToCartConfirm(products[$index+2].id)" ></product-button-card>
+                    </div>
+                </div>
+                <div  class="col-xs-3 thumbnail"  ng-hide="!products[$index+3].title">
+                    <img ng-src="{{products[$index+3].imgurl}}">
+                    <div class="caption" ng-show="products[$index+3].title">
+                        <h2>{{products[$index+3].title}}</h2>
+                        <p>{{products[$index+3].disc}}</p>
+                        <hr>
+                        <product-button-card add-to-cart-method="addToCartConfirm(products[$index+3].id)" ></product-button-card>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

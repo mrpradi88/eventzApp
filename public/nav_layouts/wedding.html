@@ -1,0 +1,62 @@
+<div id="top" style="padding-top: 100px">
+
+</div>
+<div>
+    <hr>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <p>
+        <h2>  Add the elegant appearance to your party by choosing eye blazing range of products in the collection..</h2>
+        </p>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row" ng-controller="weddingController">
+        <div class="col-sm-12" >
+            <div class="row" ng-repeat="service in data.services ">
+                <div class="col-sm-12 thumbnail" style="background-color: #faf2cc">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img class="img-responsive " ng-src="{{service.imageurl}}" >
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h2>{{service.title}}</h2>
+                                    <hr>
+                                    </div>
+                                    <div class="col-sm-6">
+                                    <p>{{service.disc}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="row" ng-if="!service.askfp">
+                                        <div class="col-sm-4"><div ng-if="service.minprice!=-1"><b>MinPrice <a href="" class="btn btn-danger"><i class="fa fa-inr"> {{service.minprice}}</i></a></b></div></div>
+                                        <div class="col-sm-4"><div ng-if="service.price!=-1"><b>Price <a href="" class="btn btn-danger"><i class="fa fa-inr">{{service.price}}</i></a></b></div></div>
+                                        <div class="col-sm-4"><div ng-if="service.maxprice!=-1"><b>MaxPrice <a href="" class="btn btn-danger"><i class="fa fa-inr">{{service.maxprice}}</i></a></b></div></div>
+                                    </div>
+                                    <div class="row" ng-if="service.askfp" >
+                                        <div class="col-sm-12">
+                                        <b>Ask For Price</b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <cart-card></cart-card>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

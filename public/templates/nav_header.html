@@ -1,0 +1,74 @@
+<header>
+    <div class="container">
+<nav class="nav navbar navbar-default  navbar-fixed-top" role="navigation" ng-controller="cartController">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="nav  navbar-header">
+        <a href="#/"  class="nav navbar-brand" >
+            <img class="img-responsive" src="/images/logo_6.png"></a>
+
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <!--<div><a  href="#" type="button" class="btn btn-primary navbar-btn btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge">{{cService}}</span></a>
+            <a  href="#" type="button" class="btn btn-primary navbar-btn btn-lg"><span class="glyphicon glyphicon-heart-empty"></span><span class="badge">{{wService}}</span></a></div>-->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+        <ul class="nav navbar-nav">
+            <li  ><a href="#/"><span class="glyphicon glyphicon-home" ></span> <b>Home</b></a></li>
+            <!--<li><a href="#/products"><b>Products</b></a></li>-->
+            <li dropdown>
+                <a href=""><b>Services</b><b class="caret"></b></a>
+                <ul class="dropdown-menu ">
+                    <li><a href="#/allservices" ><b>All Services</b></a></li>
+                    <li><a href="#/birthdayparty" ><b>Birthday Party</b></a></li>
+                    <li><a href="#/wedding" ><b>Wedding Event</b></a></li>
+                    <li><a href="#/corporateevent" ><b>Corporate Event</b></a></li>
+                    <li><a href="#/photographyandvideography" ><b>Photography and Videography</b></a></li>
+                    <li><a href="#/artworks" ><b>Art Works</b></a></li>
+                    <li><a href="#outdoorevent" ><b>Outdoor Event</b></a></li>
+                    <li><a href="#/childrenactivities" ><b>Children Activities</b></a></li>
+                </ul>
+            </li>
+            <li><a href="#/gallery"><b>Gallery</b></a></li>
+            <li><a href="/static/contactus"><b>Contact Us</b></a></li>
+            <ul class="nav navbar-nav navbar-right">
+                <li dropdown>
+                    <a href="#" dropdown-toggle><b> Social </b><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://www.facebook.com" ><b>Facebook</b></a></li>
+                        <li><a href="http://www.twitter.com" ><b>Twitter</b></a></li>
+                        <li><a href="https://www.plus.google.com" ><b>Google Plus</b></a></li>
+                        <li><a href="http://www.linkedin.com" ><b>LinkedIn</b></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+        <ul class="nav navbar-nav navbar-right ">
+            <a id="login" href="#" type="button" class="btn btn-primary navbar-btn btn-lg ">
+                <span class="glyphicon glyphicon-user"></span> Login
+            </a>
+            <a id="cart" href="#" type="button" class="btn btn-primary navbar-btn btn-lg">
+                <span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge">{{cService}}</span>
+            </a>
+            <a id="wishlist" href="#" type="button" class="btn btn-primary navbar-btn btn-lg">
+                <span class="glyphicon glyphicon-heart-empty"></span> Wishlist <span class="badge">{{wService}}</span>
+            </a>
+        </ul>
+
+    </div><!-- /.navbar-collapse -->
+    <div style="padding-right: 20px" class="contact">
+        <ul  class="nav navbar-nav navbar-right pull-right">
+            <p>
+                <span class="glyphicon glyphicon-phone"></span><b> Mob:9739708728 / 9008666691  </b><br>
+                <span class="glyphicon glyphicon-envelope"></span><b> bangaloreeventz@gmail.com</b>
+            </p>
+        </ul>
+    </div>
+</nav>
+    </div>
+</header>

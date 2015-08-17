@@ -1,0 +1,76 @@
+{
+  "name": "ui-navbar",
+  "version": "0.2.4",
+  "author": {
+    "name": "Eugenio Lentini",
+    "email": "eugenio_lentini@fastmail.fm",
+    "url": "http://blackat.github.io"
+  },
+  "description": "Angular responsive navigation with recursive menu and sub-menu construction",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/blackat/ui-navbar.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-copy": "~0.8.0",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jshint": "~0.11.1",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.9.1",
+    "grunt-html2js": "~0.3.2",
+    "grunt-htmlhint": "*",
+    "grunt-karma": "^0.12.0",
+    "grunt-protractor-runner": "^2.0.0",
+    "grunt-protractor-webdriver": "^0.2.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.3",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "load-grunt-tasks": "~3.2.0",
+    "protractor": "^2.1.0",
+    "time-grunt": "~1.2.0"
+  },
+  "main": "dist/ui-navbar.js",
+  "keywords": [
+    "ui-boostrap",
+    "boostrap",
+    "ui-router",
+    "navbar",
+    "submenu",
+    "menu",
+    "navigation",
+    "angularjs",
+    "responsive"
+  ],
+  "license": "MIT",
+  "gitHead": "7cff42ebd167ae07bc9f2b6bc74eb76a972c6b2a",
+  "bugs": {
+    "url": "https://github.com/blackat/ui-navbar/issues"
+  },
+  "homepage": "https://github.com/blackat/ui-navbar#readme",
+  "_id": "ui-navbar@0.2.4",
+  "scripts": {},
+  "_shasum": "281f0002fce99944873bd969b2efc359275b7de9",
+  "_from": "ui-navbar@*",
+  "_npmVersion": "2.12.1",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "blackat",
+    "email": "eugenio_lentini@fastmail.fm"
+  },
+  "dist": {
+    "shasum": "281f0002fce99944873bd969b2efc359275b7de9",
+    "tarball": "http://registry.npmjs.org/ui-navbar/-/ui-navbar-0.2.4.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "blackat",
+      "email": "eugenio_lentini@fastmail.fm"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/ui-navbar/-/ui-navbar-0.2.4.tgz"
+}
