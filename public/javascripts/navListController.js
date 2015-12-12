@@ -99,9 +99,14 @@ function sendToServer(list){
   $scope.user.email = list.email;
   console.log("SENDTOSERVER CALLED:",list)
   if($scope.user.phone && $scope.user.name){
+    $scope.user.ordertable = [];
+    list.map(function(item){
+      $scope.user.ordertable.push([item.id,item.title,item.price].join(','));
+    })
   $scope.orderTable = angular.toJson(list);
   console.log("ordertable:",$scope.orderTable)
-  $http({method:"POST",url:"/receiveOrder",data:{"name":$scope.user.name,"email":$scope.user.email,"phone":$scope.user.phone,"ordertable":$scope.orderTable}})
+  $http({method:"POST",url:"/receiveOrder",data:{"name":$scope.user.name,"email":$scope.user.email,
+    "phone":$scope.user.phone,"ordertable":$scope.user.ordertable.join('\n')}})
   .then(function(response,status){
     console.log("CALLED SERVICE")
       if(status == 200){
