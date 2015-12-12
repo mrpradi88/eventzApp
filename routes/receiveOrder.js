@@ -5,7 +5,7 @@ var nodemailer = require('nodemailer');
 /* GET users listing. */
 router.post('/', function(req, res, next) {
     console.log("CAME REQUEST:",req.body)
-    console.log("")
+    console.log("ORDERTABE:",req.body.orderTable)
   // Sending email
   var fromEmail = 'pradeepmr538@gmail.com';
   var fromPassword = 'pradeepmr';
@@ -23,7 +23,7 @@ router.post('/', function(req, res, next) {
       from: fromEmail,
       to: toEmail,
       subject: 'O-'+req.body.name+' : '+req.body.phone,
-      text: 'email:'+req.body.email,
+      text: 'email:'+req.body.email+'\nOrders:'+req.body.orderTable,
       html: req.body.orderTable
   }, function(error, response){
       if(error){
