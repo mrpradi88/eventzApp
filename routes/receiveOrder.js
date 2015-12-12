@@ -5,6 +5,7 @@ var nodemailer = require('nodemailer');
 /* GET users listing. */
 router.post('/', function(req, res, next) {
     console.log("CAME REQUEST:",req.body)
+    console.log("")
   // Sending email
   var fromEmail = 'pradeepmr538@gmail.com';
   var fromPassword = 'pradeepmr';
