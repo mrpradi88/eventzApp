@@ -7,8 +7,8 @@ router.post('/', function(req, res, next) {
     console.log("CAME REQUEST:",req.body)
     console.log("ORDERTABE:",req.body.ordertable)
 
-    orderFormatter(req.body.ordertable);
-    
+    //orderFormatter(req.body.ordertable);
+
     var orderFormatter = function(order){
    
     order.forEach(function(item){
@@ -38,7 +38,7 @@ router.post('/', function(req, res, next) {
       from: fromEmail,
       to: toEmail,
       subject: 'O-'+req.body.name+' : '+req.body.phone,
-      text: 'email:'+req.body.email+'\nOrders:'+orderTable,
+      text: 'email:'+req.body.email+'\nOrders:'+req.body.ordertable,
       html: req.body.orderTable
   }, function(error, response){
       if(error){
