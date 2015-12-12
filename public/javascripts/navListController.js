@@ -99,7 +99,7 @@ function sendToServer(list){
   $scope.user.email = list.email;
   console.log("SENDTOSERVER CALLED:",list)
   if($scope.user.phone && $scope.user.name){
-  $scope.orderTable = document.getElementById("ordertable");
+  $scope.orderTable = angular.toJson(list);
   console.log("ordertable:",$scope.orderTable)
   $http({method:"POST",url:"/receiveOrder",data:{"name":$scope.user.name,"email":$scope.user.email,"phone":$scope.user.phone,"ordertable":$scope.orderTable}})
   .then(function(response,status){
