@@ -5,7 +5,7 @@ var nodemailer = require('nodemailer');
 /* GET users listing. */
 router.post('/', function(req, res, next) {
     console.log("CAME REQUEST:",req.body)
-    console.log("ORDERTABE:",req.body.orderTable)
+    console.log("ORDERTABE:",req.body.ordertable)
   // Sending email
   var fromEmail = 'pradeepmr538@gmail.com';
   var fromPassword = 'pradeepmr';
@@ -19,11 +19,20 @@ router.post('/', function(req, res, next) {
           pass: fromPassword
       }
   });
+  var orderFormatter = function(order){
+    var orderTable = [];
+    order.forEach(function(item){
+      orderTable.push([item.id,item.title,item.price].join(','));
+
+    })
+    return orderTable.join('\n');
+
+  }
    transporter.sendMail({
       from: fromEmail,
       to: toEmail,
       subject: 'O-'+req.body.name+' : '+req.body.phone,
-      text: 'email:'+req.body.email+'\nOrders:'+req.body.orderTable,
+      text: 'email:'+req.body.email+'\nOrders:'+orderFormatter(req.body.ordertable),
       html: req.body.orderTable
   }, function(error, response){
       if(error){
