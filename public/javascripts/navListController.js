@@ -94,13 +94,13 @@ $scope.showAdvanced = function(ev) {
   };
 
 function sendToServer(list){
-  $scope.phone = list.phone;
-  $scope.name = list.name;
-  $scope.email = list.email;
+  $scope.user.phone = list.phone;
+  $scope.user.name = list.name;
+  $scope.user.email = list.email;
   console.log("SENDTOSERVER CALLED:",list)
-  if($scope.phone && $scope.name){
+  if($scope.user.phone && $scope.user.name){
   $scope.orderTable = document.getElementById("ordertable")
-  $http({method:"POST",url:"/receiveOrder",data:$scope.orderTable})
+  $http({method:"POST",url:"/receiveOrder",data:{"name":$scope.user.name,"email":$scope.user.email,"phone":$scope.user.phone,"ordertable":$scope.orderTable}})
   .then(function(response,status){
     console.log("CALLED SERVICE")
       if(status == 200){
