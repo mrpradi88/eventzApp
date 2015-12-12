@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/src/stylesheet/style.css" >
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="/src/stylesheet/imageviewer.css" >-->
+
+    <title></title>
+</head>
+<body ng-app="myApp" >
+
+<!-- Latest compiled and minified JavaScript -->
+
+<script src="/lib/angular/angular.min.js" ></script>
+<script src="/lib/angular-route/angular-route.min.js" ></script>
+<script src="/lib/angular-animate/angular-animate.min.js"></script>
+<script src="/lib/angular-touch/angular-touch.min.js" ></script>
+<script src="/lib/angular-bootstrap/ui-bootstrap.min.js" ></script>
+<script src="/lib/angular-bootstrap/ui-bootstrap-tpls.min.js" ></script>
+<script src="/lib/ui-navbar/release/js/ui-navbar.min.js" ></script>
+<script src="/src/javascript/angular-app.js" ></script>
+<script src="/src/javascript/dataservice/datafactory.js" ></script>
+<script src="/src/javascript/factory.js" ></script>
+<script src="/src/javascript/controller.js" ></script>
+<!--<script src="/src/javascript/birthdaycontroller.js" ></script>-->
+
+
+<script src="/src/javascript/directive.js" ></script>
+<script src="/lib/angular-filter/dist/angular-filter.min.js" ></script>
+<!--<div class="container">
+    <div class="row">
+        <div class="col-xs-12 pull-right">Mob:9739708728</div>
+    </div>
+</div>-->
+<div ng-include='"templates/nav_header.html"' ></div>
+<div ng-view >
+
+</div>
+<div class="pan" ></div>
+<!--<div class="panel  " style="position:fixed; width:10%; height:70px; background-color:yellow; padding:5px; bottom:0px; ">
+    test content :D
+</div>-->
+
+   <!-- <div class="panel-body" style="position:fixed; width:20%; height:100px; float: right; bottom:0px;">
+        <span class="glyphicon glyphicon-phone"></span><b> Mob:9739708728 / 9008666691  </b><br>
+        <span class="glyphicon glyphicon-envelope"></span><b> bangaloreeventz@gmail.com</b>
+    </div>-->
+<div ng-include='"templates/footer.html"' ></div>
+<script>
+   /* $(function(){
+        $('#mycarousel').carousel({
+            interval:3000
+        });
+    })*/
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<div flex layout="column" >
+    <div layout-margin>
+        <p>
+        <h2>  Add the elegant appearance to your party by choosing eye blazing range of products in the collection..</h2>
+        </p>
+    </div>
+
+<div layout-padding>
+    <div layout="row">
+    <div  ng-controller="birthdayController" layout="row" layout-wrap>
+        <div ng-repeat="service in data.services" style="background-color:AD1457" layout-margin flex="30" flex-sm="100" >
+            <md-whiteframe  layout-margin class="md-whiteframe-3dp">
+            <div layout="column">
+                <div layout="column">
+                    <div>
+                        <h2>{{service.title}}</h2>
+                    </div>
+                    <div layout-wrap>
+                        <md-card>
+                        <img  ng-src="{{service.imageurl}}" ></img>
+                    </md-card>
+                    </div>
+                </div>
+                <div layout="column" >
+                    <!-- <div >
+                        <p>{{service.disc}}</p>
+                    </div> -->
+                    <div layout="column" >
+                        <div  ng-if="!service.askfp">
+                            <div layout-wrap layout-gt-md="row" layout-sm="column" layout-md="column">
+                                <div ng-if="service.minprice!=-1" >
+                                    <md-button class=" md-primary">
+                                    MinPrice: <img class="png-icon" src="./../images/rupee.png" style="width: 14px; height: 14px;">{{service.minprice}}
+                                </md-button>
+                                </div>
+                                <div ng-if="service.price!=-1"  >
+                                    <md-button class="md-primary">
+                                    Price: <img class="png-icon" src="./../images/rupee.png" style="width: 14px; height: 14px;">{{service.price}}
+                                </md-button>
+                                   
+                                </div>
+                                <div  ng-if="service.maxprice!=-1" >
+                                    <md-button class=" md-primary">
+                                    MaxPrice: <img class="png-icon" src="./../images/rupee.png" style="width: 14px; height: 14px;">{{service.maxprice}}
+                                </md-button>
+                                    
+                                </div>
+                            </div>
+                                            
+                        </div>
+                        <div layout-wrap layout-gt-md="row" layout-sm="column" layout-md="column" ng-if="service.askfp" layout-padding>
+                                    <b>Ask For Price</b>
+                        </div>
+                    </div>
+
+                    <div >
+                        <cart-card></cart-card>
+                    </div>
+
+                </div>
+            </div>
+            </md-whiteframe >
+    </div>
+</div>
+</div>
+</div>

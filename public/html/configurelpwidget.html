@@ -1,0 +1,92 @@
+<div id="content-body" ng-controller="configLpWidgetController as clp" layout ng-cloak>
+
+	<!-- <form name="addlandingpage"> -->
+	<div flex="10"></div>
+	<div flex="80">
+	<div layout="column">
+			<div layout-padding>
+			</div>
+			<md-toolbar> <div class="md-toolbar-tools">Add Multi-Lingual Page</div> </md-toolbar>
+			<div flex="5"> </div>
+	</div>
+
+		<div flex="80" layout="column">
+			<label style="font-weight : bold">The Landing Page Title :</label>
+			<md-input-container >
+				<input ng-model="configLandingPageModel.url" ng-placeholder="Enter Title Here" aria-label="Title">
+			</md-input-container>
+		</div>
+		<div flex="80" layout="column" >
+			<label style="font-weight : bold">Landing Page Description :</label>
+			<md-input-container>
+				<textarea ng-model="configLandingPageModel.description" md-autogrow rows="4" aria-label="description"></textarea>
+			</md-input-container>
+		</div>
+
+		
+		<!-- <div layout="column" >
+			<label style="font-weight : bold">Language options available.</label>
+			<md-input-container>
+				<md-content layout-wrap layout="row" ng-repeat=" language in clp.availableLanguages | groupBy:2">
+					<div layout="column" layout-md="column" layout-sm="column" layout-xs="column"  ng-repeat="eachLanguage in language">
+						<md-checkbox ng-disabled="eachLanguage.language == 'English' || eachLanguage.language == 'english'" ng-checked="existsAvailableLanguage(eachLanguage , availableSelected)" ng-click="toggleAvailableLanguage(eachLanguage, availableSelected)" aria-label="languages available">
+				          {{eachLanguage.language}}
+				        </md-checkbox>
+					</div>
+				</md-content>
+			</md-input-container>
+		</div> -->
+
+		<div layout="column" >
+					<label style="font-weight : bold">Language options available.</label>
+					<md-input-container>
+						<md-content layout="row" flex layout-wrap >
+						<div flex >
+								<md-checkbox  ng-repeat=" eachLanguage in clp.availableLanguages" ng-disabled="eachLanguage.language == 'English' || eachLanguage.language == 'english'" ng-init="eachLanguage.result=(eachLanguage.language == 'English' || eachLanguage.language == 'english')" ng-model="eachLanguage.result" aria-label="languages available">
+						          {{eachLanguage.language}}
+						        </md-checkbox>
+						    </div>
+						</md-content>
+					</md-input-container>
+		</div>
+
+	
+		<div  layout="row" >
+			<label style="font-weight : bold" layout="row" layout-align="center center">Language option widget :</label>
+			<md-input-container layout-align="center start">
+				
+				<md-switch flex ng-model="configLandingPageModel.widgetEnabled" aria-label="Switch 1" >
+	  			</md-switch>
+			</md-input-container>
+		</div>
+		
+		<div  layout="column" >
+			<label style="font-weight : bold">Landing page default language.</label>
+			<md-input-container>
+			
+					<md-radio-group ng-model="configLandingPageModel.defaultLanguageID">
+					<md-content layout-wrap layout="row">
+				      <md-radio-button  ng-repeat="language in clp.availableLanguages" ng-value="language.id" class="md-primary">{{language.language}}</md-radio-button>
+				      </md-content>
+				    </md-radio-group>
+			</md-input-container>
+		</div>
+
+		<div  layout="row" >
+			<label style="font-weight : bold" layout="row" layout-align="center center">Channel :</label>
+			<md-input-container layout-align="center start">
+				<md-checkbox ng-checked="existsChannel(eachChannel.id , channel)" ng-repeat=" eachChannel in clp.channelList " ng-click="toggleChannel(eachChannel.id, channel)" aria-label="channel available">
+				          {{eachChannel.channel}}
+				        </md-checkbox>
+			</md-input-container>
+		</div>
+
+		
+		<div  layout="row">
+			<md-button  class="md-raised md-primary"  ng-click="clp.addLandingPage()" >Submit</md-button>
+		</div>
+	</div>
+	<div flex="10">
+	</div>
+	<!-- </form> -->
+</div>

@@ -1,0 +1,42 @@
+<div  ng-controller="newLanguageController as nlc" class="md-inline-form" layout ng-cloak>
+	<div flex="10"></div>
+	<div flex="80">
+	<div layout="column">
+			<div layout-padding>
+			</div>
+			<md-toolbar> <div class="md-toolbar-tools">Manage Base Languages</div> </md-toolbar>
+			<div flex="5"> </div>
+	</div>
+<!-- <form  name="addLanguageForm" novalidate md-no-autogrow> -->
+	
+
+	<md-content layout="row" layout-md="column" layout-sm="column" layout-xs="column">
+		<label style="font-weight : bold">Add new language option :</label>
+		<md-input-container >
+			<input name="newlanguage" ng-model="newLanguageModel.language" aria-label="new language" ng-placeholder="Enter Language Here" >
+		</md-input-container>
+		<md-input-container>
+		<md-button class="md-raised md-primary"  ng-click="nlc.addLanguage()" >Add</md-button>
+		</md-input-container>
+		
+	</md-content>
+	<!-- </form> -->
+	<label  style="font-weight : bold"  layout-align="center center">Language options available.</label>
+	<div layout="row" >
+			<md-input-container layout-align="center start">
+				<md-content layout-wrap layout="row" ng-repeat="items in nlc.availableLanguages | groupBy:2">
+					<div layout="row" layout-md="column" layout-sm="column" layout-xs="column"  ng-repeat="item in items"> 
+						<md-button layout="row" flex class="md-raised md-warn" class="icon" aria-label="Delete Language" ng-click="nlc.showConfirm($event,item)">{{item.language}} <md-icon md-svg-icon="./../images/highlight_off_18px.svg" > </md-icon>
+					</md-button>
+					
+					</div>
+				</md-content>
+			</md-input-container>
+		</div>
+	
+	<div flex="20">
+	</div>
+	</div>
+	
+	
+	

@@ -1,0 +1,47 @@
+<div layout="column" flex="50">
+
+<div >
+	<div layout="column">
+		<div layout layout-sm="column">
+			<div>
+				<label>Name:</label>
+		        <md-input-container flex>
+		          
+		          <input ng-model="user.Name">
+		        </md-input-container>
+    		</div>
+    		<div>
+		         <label>Mobilt No:</label>
+		        <md-input-container flex>
+		         
+		          <input ng-model="user.mobile">
+		        </md-input-container>
+    		</div>
+    		<div>
+		         <label>Writen Order:</label>
+		        <md-input-container flex>
+		         
+		          <input ng-model="user.order">
+		        </md-input-container>
+    		</div>
+      	</div>
+      	<div>
+      		<md-button class="md-raised md-primary">
+      		Send
+      		</md-button>
+
+		</div>
+	</div>
+
+</div>
+<div >
+	<div layout="row" layout-sm="column" ng-repeat="prod in getProductList">
+		<div>
+		</div>
+	</div>
+
+
+
+</div>
+
+</div>

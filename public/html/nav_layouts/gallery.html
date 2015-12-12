@@ -1,0 +1,38 @@
+<div class="container">
+<div id="top" style="padding-top: 50px">
+
+</div>
+<hr>
+<div class="row" ng-controller="galleryController">
+    <div class="col-sm-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Our Works......
+            </div>
+            <div class="panel-body fixed-panel">
+
+                <div class="col-xs-12 thumb ">
+                    <div class="overlay"></div>
+                    <div class="row" ng-repeat="time in times">
+                        <div>
+                            <hr>
+                        </div>
+                        <div class="col-xs-2 " ng-repeat="(key , value) in images" >
+                            <a href="#" >
+                                <img class=" img-responsive img-rounded" ng-src="{{value}}" alt=""/>
+                            </a>
+                        </div>
+                        <div>
+                            <hr>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

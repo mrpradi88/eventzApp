@@ -1,0 +1,37 @@
+<div id="top" style="padding-top: 100px">
+
+</div>
+<div>
+    <hr>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <p>
+        <h2>  Add the elegant appearance to your party by choosing eye blazing range of products in the collection..</h2>
+        </p>
+    </div>
+
+</div>
+<div class="container">
+
+    <div class="row" ng-controller="productController">
+        <div class="col-xs-12">
+            <div class="row" ng-repeat="prod in products | groupBy:3 ">
+                <div class="col-xs-4 thumbnail" ng-repeat="product in prod" >
+
+                    <img ng-src="{{product.imgurl}}">
+                    <div class=" col-xs-12 caption" ng-show="product.title">
+                        <div class="col-xs-12">
+                            <h2>{{product.title}}</h2>
+                            <p><h4>{{product.disc}}</h4></p>
+                            <hr>
+                        </div>
+                        <cart-button></cart-button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

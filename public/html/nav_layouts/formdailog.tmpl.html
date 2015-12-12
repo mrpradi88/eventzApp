@@ -1,0 +1,71 @@
+<md-dialog aria-label="Order form"  ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Order Form:</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="./../images/clear.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2>Please fill the below form.</h2>
+        <md-content  layout-padding layout="row" layout-sm="column">
+    <md-input-container>
+      <label>Name</label>
+      <input ng-model="list.name">
+    </md-input-container>
+    <md-input-container>
+      <label>Email</label>
+      <input ng-model="list.mail" type="email" >
+    </md-input-container>
+    <md-input-container>
+      <label>Phone</label>
+      <input ng-model="list.phone" type="mobile">
+    </md-input-container>
+  </md-content>
+
+        <table id="ordertable" style="border-collapse: separate,
+    border-spacing: 2px,
+    border-color: gray">
+          <thead>
+          <tr>
+            <th>
+              SL No
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Price
+            </th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr ng-repeat="item in list">
+              <td>
+                {{$index+1}}
+              </td>
+              <td>
+                {{item.title}}
+              </td>
+              <td>
+                {{(item.price != -1)?item.price:'-'}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      
+      <span flex></span>
+      <md-button ng-click="cancel()">
+       Cancel
+      </md-button>
+      <md-button ng-click="answer(list)" style="margin-right:20px;">
+        Submit
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>
