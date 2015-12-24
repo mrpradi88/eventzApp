@@ -5,7 +5,7 @@
             
             $routeProvider
                 .when('/',{
-                    templateUrl:'/html/nav_layouts/allservices.html'
+                    templateUrl:'/html/nav_layouts/birthdayparty.html'
                 })
                 .when('/corporate',{
                             templateUrl:'/html/nav_layouts/carporate.html',

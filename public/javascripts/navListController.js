@@ -94,21 +94,17 @@ $scope.showAdvanced = function(ev) {
   };
 
 function sendToServer(list){
-  $scope.user.phone = list.phone;
-  $scope.user.name = list.name;
-  $scope.user.email = list.email;
+
+  $scope.phone = list.phone;
+  $scope.name = list.name;
+  $scope.email = list.email;
   console.log("SENDTOSERVER CALLED:",list)
-  if($scope.user.phone && $scope.user.name){
-    $scope.user.ordertable = [];
-    list.map(function(item){
-      $scope.user.ordertable.push([item.id,item.title,item.price].join(','));
-    })
-  $scope.orderTable = angular.toJson(list);
-  console.log("ordertable:",$scope.orderTable)
-  $http({method:"POST",url:"/receiveOrder",data:{"name":$scope.user.name,"email":$scope.user.email,
-    "phone":$scope.user.phone,"ordertable":$scope.user.ordertable.join('\n')}})
+  if($scope.phone && $scope.name){
+  $scope.orderTable = document.getElementById("ordertable")
+  $http({method:"POST",url:"/receiveOrder",data:$scope.orderTable})
   .then(function(response,status){
     console.log("CALLED SERVICE")
+    self.showsentMessage();
       if(status == 200){
           self.showsentMessage(ev);
       }
@@ -116,6 +112,19 @@ function sendToServer(list){
   .catch(function(errorResponse,status){
 
   })
+}else{
+  self.showConfirm = function(ev,languageItem) {
+                var confirm = $mdDialog.confirm()
+                      .title("Please fill Name and Phone No.")
+                      .ariaLabel('widget enable alert')
+                      .targetEvent(ev)
+                      .ok("OK");
+                      
+                $mdDialog.show(confirm).then(function() {
+                  
+                });
+              };
+              self.showConfirm();
 }
 }
 

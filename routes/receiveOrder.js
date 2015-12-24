@@ -5,25 +5,10 @@ var nodemailer = require('nodemailer');
 /* GET users listing. */
 router.post('/', function(req, res, next) {
     console.log("CAME REQUEST:",req.body)
-    console.log("ORDERTABE:",req.body.ordertable)
-
-    //orderFormatter(req.body.ordertable);
-
-    var orderFormatter = function(order){
-   
-    order.forEach(function(item){
-      orderTable.push([item.id,item.title,item.price].join(','));
-
-    })
-    return orderTable.join('\n');
-
-  }
   // Sending email
   var fromEmail = 'pradeepmr538@gmail.com';
   var fromPassword = 'pradeepmr';
   var toEmail = 'bangaloreeventz@gmail.com';
-
-   var orderTable = [];
   // Sending mail to the user
 
   var transporter = nodemailer.createTransport({
@@ -33,12 +18,11 @@ router.post('/', function(req, res, next) {
           pass: fromPassword
       }
   });
-  
    transporter.sendMail({
       from: fromEmail,
       to: toEmail,
       subject: 'O-'+req.body.name+' : '+req.body.phone,
-      text: 'email:'+req.body.email+'\nOrders:'+req.body.ordertable,
+      text: 'email:'+req.body.email,
       html: req.body.orderTable
   }, function(error, response){
       if(error){
@@ -55,6 +39,5 @@ router.post('/', function(req, res, next) {
   });
 res.writeHead(200, {'Content-Type': 'text/plain'});
 });
-
 
 module.exports = router;
