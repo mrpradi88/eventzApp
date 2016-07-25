@@ -7,7 +7,7 @@ router.post('/', function(req, res, next) {
     console.log("CAME REQUEST:",req.body)
   // Sending email
   var fromEmail = 'pradeepmr538@gmail.com';
-  var fromPassword = 'pradeepmr';
+  var fromPassword = '';
   var toEmail = 'bangaloreeventz@gmail.com';
   // Sending mail to the user
 
